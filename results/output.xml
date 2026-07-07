@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.4.2 (Python 3.14.5 on win32)" generated="2026-07-07T09:11:31.759102" rpa="false" schemaversion="5">
+<suite id="s1" name="Tests" source="C:\Users\jamic\Workspace\robotframework_test_automation\tests">
+<suite id="s1-s1" name="Login Test" source="C:\Users\jamic\Workspace\robotframework_test_automation\tests\login_test.robot">
+<test id="s1-s1-t1" name="TC01 - Login Test With Valid Data" line="10">
+<kw name="Open Browser and Navigate to Page" owner="common_page" type="SETUP">
+<kw name="Create Webdriver" owner="Selenium2Library">
+<msg time="2026-07-07T09:11:32.077596" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<arg>${BROWSER}</arg>
+<doc>Creates an instance of Selenium WebDriver.</doc>
+<status status="PASS" start="2026-07-07T09:11:32.069841" elapsed="0.709459"/>
+</kw>
+<kw name="Go To" owner="Selenium2Library">
+<msg time="2026-07-07T09:11:32.779857" level="INFO">Opening url 'https://www.saucedemo.com/'</msg>
+<arg>${URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2026-07-07T09:11:32.779612" elapsed="0.557369"/>
+</kw>
+<status status="PASS" start="2026-07-07T09:11:32.069195" elapsed="1.268004"/>
+</kw>
+<kw name="Login with Credentials" owner="login_page">
+<kw name="Wait Until Element Is Visible" owner="Selenium2Library">
+<arg>${EMAIL_INPUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-07-07T09:11:33.338113" elapsed="0.032995"/>
+</kw>
+<kw name="Input Text" owner="Selenium2Library">
+<msg time="2026-07-07T09:11:33.371892" level="INFO">Typing text 'standard_user' into text field '//*[@id="user-name"]'.</msg>
+<arg>${EMAIL_INPUT}</arg>
+<arg>${email}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-07-07T09:11:33.371309" elapsed="0.100294"/>
+</kw>
+<kw name="Input Text" owner="Selenium2Library">
+<msg time="2026-07-07T09:11:33.472300" level="INFO">Typing text 'secret_sauce' into text field '//*[@id="password"]'.</msg>
+<arg>${PASSWORD_INPUT}</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-07-07T09:11:33.471891" elapsed="0.136900"/>
+</kw>
+<kw name="Click Element" owner="Selenium2Library">
+<msg time="2026-07-07T09:11:33.609433" level="INFO">Clicking element '//*[@id="login-button"]'.</msg>
+<arg>${LOGIN_BUTTON}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-07-07T09:11:33.609045" elapsed="0.135525"/>
+</kw>
+<arg>${VALID_EMAIL}</arg>
+<arg>${VALID_PASSWORD}</arg>
+<status status="PASS" start="2026-07-07T09:11:33.337659" elapsed="0.407055"/>
+</kw>
+<kw name="LandingPage Title Should Be Visible" owner="login_page">
+<kw name="Element Text Should Be" owner="Selenium2Library">
+<msg time="2026-07-07T09:11:33.745841" level="INFO">Verifying element '//span[@data-test="title"]' contains exact text 'Products'.</msg>
+<arg>${LANDINGPAGE_TITLE}</arg>
+<arg>${EXPECTED_TITLE}</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="PASS" start="2026-07-07T09:11:33.745584" elapsed="0.024489"/>
+</kw>
+<arg>${LANDING_PAGE_EXPECTED_TITLE}</arg>
+<status status="PASS" start="2026-07-07T09:11:33.745170" elapsed="0.025004"/>
+</kw>
+<kw name="Close Browser" owner="common_page" type="TEARDOWN">
+<kw name="Close All Browsers" owner="Selenium2Library">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" start="2026-07-07T09:11:33.770838" elapsed="2.154814"/>
+</kw>
+<status status="PASS" start="2026-07-07T09:11:33.770572" elapsed="2.155238"/>
+</kw>
+<tag>smoke</tag>
+<status status="PASS" start="2026-07-07T09:11:32.068488" elapsed="3.857525"/>
+</test>
+<status status="PASS" start="2026-07-07T09:11:31.798094" elapsed="4.128660"/>
+</suite>
+<status status="PASS" start="2026-07-07T09:11:31.760525" elapsed="4.166998"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">smoke</stat>
+</tag>
+<suite>
+<stat name="Tests" id="s1" pass="1" fail="0" skip="0">Tests</stat>
+<stat name="Login Test" id="s1-s1" pass="1" fail="0" skip="0">Tests.Login Test</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
